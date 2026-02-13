@@ -1,26 +1,112 @@
+Thymiko – Inkphora (PoC Touch Prototype)
+
+Live Demo: https://huggingface.co/spaces/Miren-12/thymiko-inkphora-PoC-touch
+
 ---
-title: Thymiko – Inkphora PoC Touch
-emoji: ✍️
-colorFrom: yellow
-colorTo: purple
-sdk: gradio
-sdk_version: "6.1.0"
-app_file: app.py
-pinned: false
+
+A touch-based AI prototype that transforms freehand drawing gestures into:
+
+Heuristic valence–arousal mapping
+
+Short AI-generated poetic output
+
+Demo mood visualization
+
+Curated music suggestion layer
+
+This PoC validates gesture-to-affect mapping and event-driven interaction logic within a lightweight deployed environment.
+
 ---
-# 🌱 Thymiko – Inkphora (PoC)
 
-**Draw → Interpret → Poetic Line + Heuristic Mood Graphic → Pick Music**  
-This live demo shows the core experience: sketch freely, receive a short AI-generated poetic line with a small **heuristic mood graphic** (demo visualization), then explore a music path.
+Architecture
 
-## 🎨 How it works
-1. Draw a few strokes on the canvas.  
-2. Click **Interpret** (below the sketchpad).  
-3. Read the poetic AI response + **heuristic mood graphic** (demo visualization, not an assessment).  
-4. Pick one of the three suggested music links.
+User Touch Input (Canvas)
+→ Feature Extraction (stroke metrics: direction bias, rhythm, speed variance)
+→ Heuristic Valence–Arousal Mapping
+→ LLM API (poetic generation conditioned on arousal)
+→ Mood Visualization (demo graphic)
+→ Music Suggestion Layer
 
-## 🔒 Privacy & Disclaimer
-- No images or personal data are stored.  
-- Non-diagnostic demo for UX validation only.  
-- **Heuristic mood graphic is a demo visualization (not an assessment).**
-© 2025 Thymiko / Inkphora. All rights reserved.
+---
+
+Hosted via Hugging Face (Gradio-based interface).
+
+Core Components
+1. Gesture Feature Extraction
+
+Left/Right bias
+
+Stroke length
+
+Speed variance
+
+Rhythm / pause ratio
+
+Heuristic mapping (non-clinical)
+
+2. Heuristic Affect Mapping
+
+Simplified Valence–Arousal model
+
+Deterministic mapping (v1 PoC)
+
+No training, no personalization
+
+3. AI Text Generation
+
+Prompt conditioning by arousal value
+
+Controlled output length
+
+Seed-based generation
+
+4. Music Suggestion Layer
+
+3 curated paths
+
+Non-autoplay
+
+UX-first exploration
+
+---
+
+Technical Stack:
+
+Python (Gradio app)
+
+LLM API integration
+
+Heuristic affect mapping logic
+
+Deployed on Hugging Face Spaces
+
+Event-driven interaction model
+
+---
+
+Validation Scope:
+
+UX testing of draw → reflect flow
+
+Face-validity testing of heuristic mapping
+
+Engagement observation (qualitative)
+
+---
+
+Privacy & Positioning
+
+No raw images stored
+
+No biometric data
+
+Non-diagnostic
+
+Experimental prototype
+
+---
+
+Status
+
+Proof of Concept (Deployed)
+Used for UX validation and interaction testing.
